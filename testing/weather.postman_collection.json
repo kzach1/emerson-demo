@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "34977fec-9b17-4069-9b5f-756c4a339619",
+		"name": "weather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7627273"
+	},
+	"item": [
+		{
+			"name": "http://api.openweathermap.org/geo/1.0/direct?q=tuckahoe,ny,us",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cf002751564a4c78f5f7ed479f1b9ba3",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/geo/1.0/direct?q=tuckahoe,ny,us",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"geo",
+						"1.0",
+						"direct"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "tuckahoe,ny,us"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://api.openweathermap.org/geo/1.0/zip?zip=11940",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/geo/1.0/zip?zip=11940",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"geo",
+						"1.0",
+						"zip"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "11940"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
