@@ -1,6 +1,7 @@
 package com.emerson.demo.openweatherapi.service;
 
 import java.util.List;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,8 +42,10 @@ public class GeocodingService {
         String location = sb.toString();
         List<GeocodingDirectResponseDto> response =
                 geocodingAPI.directCoordinates(location, apiConfig.getAppid(), LIMIT);
-        GeocodingDirectResponseDto geocodingResponse = response.get(0);
 
+        Preconditions.checkArgument(CollectionUtils.isNotEmpty(response),
+                "Unable to determine location for city/state/country " + city + "/" + state + "/" + country);
+        GeocodingDirectResponseDto geocodingResponse = response.get(0);
         Preconditions.checkArgument(geocodingResponse.getLat() != null && geocodingResponse.getLon() != null,
                 "Unable to find location for city/state/country " + city + "/" + state + "/" + country);
         return Coordinates.builder()
