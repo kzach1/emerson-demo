@@ -17,15 +17,15 @@ Testing
   - You must provide at least 1 of either zip code or city in order to retrieve results
     - You may specify city by providing state and country as well
     
-  Examples:
-    - Get current weather by zip code
-      localhost:8080/api/weather?zipCode=11940
-    - Get current weather in New York City
-      localhost:8080/api/weather?city=New York
-    - Get current weather in London
-      localhost:8080/api/weather?city=London
-    - The above call is very naive and returns the first result from the OpenWeatherAPI (London, Great Britain). We can get more specific by specifying country
-      localhost:8080/api/weather?city=London&country=CA
+Examples:
+  - Get current weather by zip code
+    - localhost:8080/api/weather?zipCode=11940
+  - Get current weather in New York City
+    - localhost:8080/api/weather?city=New York
+  - Get current weather in London
+    - localhost:8080/api/weather?city=London
+  - The above call is very naive and returns the first result from the OpenWeatherAPI (London, Great Britain). We can get more specific by specifying country
+    - localhost:8080/api/weather?city=London&country=CA
 
     
 Assumptions
