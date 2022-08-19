@@ -18,6 +18,8 @@ Testing
     - You may specify city by providing state and country as well
     
 Examples:
+  - Get current weather by lat,lon
+    - localhost:8080/api/weather?lat=42.6526&lon=73.7562
   - Get current weather by zip code
     - localhost:8080/api/weather?zipCode=11940
   - Get current weather in New York City
