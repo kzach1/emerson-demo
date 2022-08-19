@@ -83,10 +83,110 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "WeatherByZip",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?zipCode=11940",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zipCode",
+							"value": "11940"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?city=New York",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "New York"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherByCityCountry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?city=London&country=CA",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "London"
+						},
+						{
+							"key": "country",
+							"value": "CA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherByLatLon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?lat=42.6526&lon=73.7562",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "42.6526"
+						},
+						{
+							"key": "lon",
+							"value": "73.7562"
+						}
+					]
+				}
 			},
 			"response": []
 		}

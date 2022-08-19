@@ -30,15 +30,18 @@ public class CurrentWeatherController {
     @GetMapping
     ResponseEntity<String> currentWeather(@RequestParam(required = false) String city,
             @RequestParam(required = false) String state, @RequestParam(required = false) String country,
-            @RequestParam(required = false) String zipCode) {
+            @RequestParam(required = false) String zipCode, @RequestParam(required = false) Double lat,
+            @RequestParam(required = false) Double lon) {
 
         Coordinates loc;
-        if (StringUtils.isNotBlank(zipCode)) {
+        if (lat != null && lon != null) {
+            loc = new Coordinates(lat, lon);
+        } else if (StringUtils.isNotBlank(zipCode)) {
             loc = geocodingService.getCoordinates(zipCode);
         } else if (StringUtils.isNotBlank(city)) {
             loc = geocodingService.getCoordinates(city, state, country);
         } else {
-            return ResponseEntity.badRequest().body("At least one of zip code or city must be provided");
+            return ResponseEntity.badRequest().body("At least one of latitude/longitude, zip code or city must be provided");
         }
         return ResponseEntity.ok(weatherService.getCurrentWeather(loc.getLat(), loc.getLon()));
 
