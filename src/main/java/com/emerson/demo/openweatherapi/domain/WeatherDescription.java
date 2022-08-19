@@ -6,12 +6,11 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GeocodingZipResponseDto {
+public class WeatherDescription {
 
-    String zip;
-    String name;
-    Double lat;
-    Double lon;
-    String country;
+    private Integer id;
+    private String main;
+    private String description;
+    private String icon;
 
 }

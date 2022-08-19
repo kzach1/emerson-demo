@@ -1,4 +1,4 @@
-package com.emerson.demo.geocoding.domain;
+package com.emerson.demo.openweatherapi.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
